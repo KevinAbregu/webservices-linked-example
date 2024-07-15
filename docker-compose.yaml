@@ -1,0 +1,20 @@
+version: "3"
+services:
+  currency-exchange:
+    image: kevinabregumirabal/mmv3-currency-exchange-service:0.0.11-SNAPSHOT
+    networks:
+      - front-end
+    ports:
+      - "8000:8000"
+    container_name: currency-exchange
+  currency-conversion:
+    image: kevinabregumirabal/mmv3-currency-conversion-service:0.0.11-SNAPSHOT
+    networks:
+      - front-end
+    ports:
+      - "8100:8100"
+    environment:
+      CURRENCY_EXCHANGE_SERVICE_HOST: "currency-exchange"
+    container_name: currency-conversion
+networks:
+  front-end:

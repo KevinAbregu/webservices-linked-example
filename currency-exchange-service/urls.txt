@@ -7,7 +7,3 @@ Currency Conversion Service
 http://35.223.40.231:8000/actuator/health/
 http://35.223.40.231:8000/actuator/health/liveness
 http://35.223.40.231:8000/actuator/health/readiness
-
-
-
--

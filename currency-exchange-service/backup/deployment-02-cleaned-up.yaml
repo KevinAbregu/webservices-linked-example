@@ -23,9 +23,9 @@ spec:
         app: currency-exchange
     spec:
       containers:
-        - image: kevinabregumirabal/mmv2-currency-exchange-service:0.0.11-SNAPSHOT
-          imagePullPolicy: IfNotPresent
-          name: mmv2-currency-exchange-service
+      - image: in28min/mmv3-currency-exchange-service:0.0.11-SNAPSHOT
+        imagePullPolicy: IfNotPresent
+        name: mmv2-currency-exchange-service
       restartPolicy: Always
 ---
 apiVersion: v1
@@ -37,9 +37,9 @@ metadata:
   namespace: default
 spec:
   ports:
-    - port: 8000
-      protocol: TCP
-      targetPort: 8000
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
   selector:
     app: currency-exchange
   sessionAffinity: None
