@@ -12,9 +12,18 @@ http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
 http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/10
 
 
+3. Se observa las imagenes docker images
+4. Se taggea para subir a repositorio
+docker tag [IMAGE_ID] [REGION]-docker.pkg.dev/[PROJECT_NAME]/[REPOSITORY_NAME]/[IMAGE_NAME]:[VERSION]
 
+5. Autenticacion con google SDK
+gcloud auth login
+gcloud auth application-default login
 
+6. Se sube las imagenes
+docker push [REGION]-docker.pkg.dev/[PROJECT_NAME]/[REPOSITORY_NAME]/[IMAGE_NAME]:[VERSION]
 
+7. Es importante revisar el docker-compose para entender puertos + variables de entorno.
 ###############
 
 Eureka
